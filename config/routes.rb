@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       delete :sign_out
     end
   end
+
+  resource :coupon
 end

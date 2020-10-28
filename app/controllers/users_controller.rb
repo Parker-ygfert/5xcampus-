@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     
     if @user.save
       sign_in_user(@user)
-      redirect_to root_path, notice: "會員註冊成功"
+      redirect_to coupon_path, notice: "會員註冊成功"
     else
       flash[:notice] = "請完成資料填寫"
       render :sign_up
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def sign_in
     @user = User.new
-    sign_in_user(@user)
+    coupon_path
   end
 
   def login
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     
     if user
       sign_in_user(user)
-      redirect_to root_path, notice: "歡迎光臨"
+      redirect_to coupon_path, notice: "歡迎光臨"
     else
       redirect_to sign_in_users_path, notice: "帳號或密碼輸入錯誤"
     end
