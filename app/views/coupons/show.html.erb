@@ -1,22 +1,24 @@
 <h1>Coupon show</h1>
 
-<%= form_for @user, url: coupon_path do |f| %>
-  <div>
-    <%= f.label :name, "姓名" %>
-    <%= f.text_field :name, required: true %>
-  </div>
-
-  <div>
-    <%= f.label :id_number, '身分證字號' %>
-    <%= f.text_field :id_number, required: true %>
-  </div>
-
-  <div>
-    <%= f.label :phone_number, '手機號碼' %>
-    <%= f.text_field :phone_number, required: true %>
-  </div>
-
-  <div>
-    <%= f.submit "兌換" %>
-  </div>
-<% end %>
+<div data-controller="coupon">
+  <%= form_for @user, url: coupon_path do |f| %>
+    <div>
+      <%= f.label :name, "姓名" %>
+      <%= f.text_field :name, required: true %>
+    </div>
+  
+    <div>
+      <%= f.label :id_number, '身分證字號' %>
+      <%= f.text_field :id_number, required: true %>
+    </div>
+  
+    <div>
+      <%= f.label :phone_number, '手機號碼' %>
+      <%= f.text_field :phone_number, required: true %>
+    </div>
+  
+    <div>
+      <%= f.submit "兌換" %>
+    </div>
+  <% end %>
+</div>
