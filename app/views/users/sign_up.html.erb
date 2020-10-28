@@ -1,0 +1,41 @@
+<h1>安安你好請註冊新帳號</h1>
+<% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@user) do |f| %>
+
+  <div>
+    <%= f.label :name, '姓名' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :id_number, '身分證字號' %>
+    <%= f.text_field :id_number %>
+  </div>
+
+  <div>
+    <%= f.label :phone_number, '手機號碼' %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= f.label :email, 'Email' %>
+    <%= f.text_field :email %>
+  </div>
+  
+  <div>
+    <%= f.label :password, '密碼' %>
+    <%= f.text_field :password %>
+  </div>
+  
+  <div>
+    <%= f.submit '送出' %>
+  </div>
+
+<% end %>
